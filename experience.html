@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Saad Jalal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        .experience-page {
+            padding: 8rem 0 4rem 0;
+            min-height: calc(100vh - 9.5rem);
+        }
+        .section-header {
+            margin-bottom: 4rem;
+        }
+        .section-header h2 {
+            font-size: 2.25rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        /* Reusing consistent clean timeline design matrix */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            border-left: 2px solid var(--border-color);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3.5rem;
+        }
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: calc(-2rem - 6px);
+            top: 0.25rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-secondary);
+            border: 2px solid var(--bg-primary);
+            box-shadow: 0 0 0 4px var(--bg-tertiary);
+        }
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .timeline-title {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+        .timeline-role {
+            font-size: 1rem;
+            color: var(--accent-secondary);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            color: var(--text-secondary);
+        }
+        .timeline-content {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .experience-bullets {
+            margin-top: 0.75rem;
+            padding-left: 1.25rem;
+        }
+        .experience-bullets li {
+            margin-bottom: 0.4rem;
+        }
+        .seeking-card {
+            background-color: rgba(20, 184, 166, 0.05);
+            border: 1px dashed var(--accent-secondary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .seeking-card i {
+            font-size: 1.5rem;
+            color: var(--accent-secondary);
+        }
+        .seeking-text h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+        .seeking-text p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Saad<span>.Jalal</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="experience.html" class="active">Experience</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                        <i class="ri-moon-line"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container experience-page">
+        <div class="section-header">
+            <h2>Experience & Engineering Activities</h2>
+            <p>Industrial status, engineering coursework engagements, and practical milestone executions.</p>
+        </div>
+
+        <div class="seeking-card">
+            <i class="ri-briefcase-4-line"></i>
+            <div class="seeking-text">
+                <h4>Actively Seeking Immediate Opportunities</h4>
+                <p>Available for post-graduate internships or full-time junior engineering tracks in Data Science, Machine Learning, and Artificial Intelligence roles.</p>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-header">
+                    <div>
+                        <h3 class="timeline-title">Project-Based Engineering (FYP)</h3>
+                        <div class="timeline-role">Lead Analytics Developer — Retail BI Pipeline</div>
+                    </div>
+                    <span class="timeline-date">2025 — 2026</span>
+                </div>
+                <div class="timeline-content">
+                    <p>Designed and launched an end-to-end analytical framework optimizing enterprise retail operations using advanced computational pipelines:</p>
+                    <ul class="experience-bullets">
+                        <li>Engineered predictive time-series modules using Meta's Prophet layout to accurately track inventory demands.</li>
+                        <li>Built transactional classification rules mapping patterns via Apriori market basket sequences.</li>
+                        <li>Aggregated structural database queries to render clean key business performance layouts within automated Power BI report views.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-header">
+                    <div>
+                        <h3 class="timeline-title">Autonomous & Agentic AI R&D</h3>
+                        <div class="timeline-role">Independent Applied Research</div>
+                    </div>
+                    <span class="timeline-date">Active Focus</span>
+                </div>
+                <div class="timeline-content">
+                    <p>Actively engineering and executing practical localized concepts focused on emerging autonomous systems, structural Large Language Model prompt frameworks, agentic orchestration, and advanced modern deep learning environments to continually augment production engineering capabilities.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-socials">
+                <a href="https://github.com/SaadDScientist" target="_blank"><i class="ri-github-fill"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
+                <a href="mailto:example@email.com"><i class="ri-mail-fill"></i></a>
+            </div>
+            <p class="footer-text">&copy; 2026 Saad Jalal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top"><i class="ri-arrow-up-line"></i></button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

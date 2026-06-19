@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Saad Jalal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        .resume-page {
+            padding: 8rem 0 4rem 0;
+            min-height: calc(100vh - 9.5rem);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .resume-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .resume-actions h2 {
+            font-size: 2.25rem;
+            letter-spacing: -0.02em;
+        }
+        .viewer-frame {
+            width: 100%;
+            height: 750px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-secondary);
+            box-shadow: var(--shadow-sm);
+        }
+        @media screen and (max-width: 768px) {
+            .viewer-frame {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Saad<span>.Jalal</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="resume.html" class="active">Resume</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle"><i class="ri-moon-line"></i></button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container resume-page">
+        <div class="resume-actions">
+            <div>
+                <h2>Curriculum Vitae</h2>
+                <p style="color: var(--text-secondary);">Review or download my latest professional experience document.</p>
+            </div>
+            <!-- Handled via standard assets route track -->
+            <a href="assets/resume.pdf" download="Saad_Jalal_Resume.pdf" class="btn btn-primary">
+                <i class="ri-download-cloud-line" style="margin-right: 0.5rem;"></i> Download PDF Document
+            </a>
+        </div>
+
+        <!-- Semantic clean fall-through frame element embed container -->
+        <iframe class="viewer-frame" src="assets/resume.pdf" title="Saad Jalal - Professional CV Document"></iframe>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-text">&copy; 2026 Saad Jalal. All rights reserved.</p>
+        </div>
+    </footer>
+    <button id="scroll-top" class="scroll-top"><i class="ri-arrow-up-line"></i></button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

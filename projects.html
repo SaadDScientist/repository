@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Saad Jalal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        .projects-page {
+            padding: 8rem 0 4rem 0;
+            min-height: calc(100vh - 9.5rem);
+        }
+        .section-header {
+            margin-bottom: 2rem;
+        }
+        .section-header h2 {
+            font-size: 2.25rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        /* Filter Controls */
+        .filter-container {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1.25rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            color: var(--text-secondary);
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--accent-primary);
+            color: #FFFFFF;
+            border-color: var(--accent-primary);
+        }
+        /* Project Layout Grid */
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        .project-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-smooth);
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .project-img-wrapper {
+            background-color: var(--bg-tertiary);
+            position: relative;
+            min-height: 280px;
+            border-right: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+        .project-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .project-info {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .project-title {
+            font-size: 1.6rem;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+        .project-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .project-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            background-color: var(--bg-primary);
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            font-size: 0.875rem;
+        }
+        .meta-block strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+        .meta-block span {
+            color: var(--text-secondary);
+        }
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+        .tech-tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+        }
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        .project-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .project-links a:hover {
+            color: var(--accent-primary);
+        }
+        /* Utility state for filter hidden items */
+        .project-card.hidden {
+            display: none !important;
+        }
+        @media screen and (max-width: 968px) {
+            .project-card {
+                grid-template-columns: 1fr;
+            }
+            .project-img-wrapper {
+                min-height: 220px;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .project-info {
+                padding: 1.5rem;
+            }
+            .project-metadata {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Saad<span>.Jalal</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                        <i class="ri-moon-line"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container projects-page">
+        <div class="section-header">
+            <h2>Selected Engineering Projects</h2>
+            <p>End-to-end architectures, data pipelines, predictive models, and business analytics applications.</p>
+        </div>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Architecture</button>
+            <button class="filter-btn" data-filter="ml">Machine Learning</button>
+            <button class="filter-btn" data-filter="dl">Deep Learning</button>
+            <button class="filter-btn" data-filter="bi">Business Intelligence / FYP</button>
+        </div>
+
+        <div class="projects-grid" id="projects-catalog">
+            
+            <div class="project-card" data-category="bi">
+                <div class="project-img-wrapper">
+                    <img src="images/project_retail.jpg" alt="Business Intelligence Dashboard Snapshot">
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Business Intelligence for Retail Stores (FYP)</h3>
+                    <p class="project-description">
+                        A comprehensive, integrated analytical enterprise framework built to optimize retail workflows. Merges historical seasonality modeling, time-series projection execution, price elasticity computations, shrinkage optimization markers, and localized product association rule mapping into a cohesive ecosystem.
+                    </p>
+                    <div class="project-metadata">
+                        <div class="meta-block">
+                            <strong>Dataset Context:</strong>
+                            <span>Historical Enterprise Retail Ledger</span>
+                        </div>
+                        <div class="meta-block">
+                            <strong>Core Engineering / Analytics:</strong>
+                            <span>Prophet Engine, XGBoost Pipeline, Apriori Algorithm</span>
+                        </div>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Statsmodels</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank"><i class="ri-github-line"></i> Repository Pipeline</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="dl">
+                <div class="project-img-wrapper">
+                    <img src="images/project_eeg.jpg" alt="EEG Seizure Analysis Signal Processing Visual">
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">EEG Seizure Classification System</h3>
+                    <p class="project-description">
+                        An advanced bio-signal classification engine configured to evaluate raw epileptic time-series brain data. Performs signal cleaning, dimensionality tracking via Principal Component Analysis (PCA), class optimization adjustments via SMOTE, and sequence analysis processing.
+                    </p>
+                    <div class="project-metadata">
+                        <div class="meta-block">
+                            <strong>Dataset Context:</strong>
+                            <span>EEG Epilepsy Data (EDF & NumPy Formats)</span>
+                        </div>
+                        <div class="meta-block">
+                            <strong>Performance Validated:</strong>
+                            <span>Evaluated across Accuracy, Precision, Recall, & F1 Scales</span>
+                        </div>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Keras</span>
+                        <span class="tech-tag">1D-CNN</span>
+                        <span class="tech-tag">LSTM</span>
+                        <span class="tech-tag">SciPy</span>
+                        <span class="tech-tag">SMOTE</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/SaadDScientist/EEG_seizure_classification" target="_blank"><i class="ri-github-line"></i> Repository Pipeline</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ml">
+                <div class="project-img-wrapper">
+                    <img src="images/project_car.jpg" alt="Car Price Prediction Architecture Model Graphic">
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Car Price Prediction System</h3>
+                    <p class="project-description">
+                        An end-to-end regression modeling project deployed to discover and estimate fair vehicle market value. Includes custom outlier processing tracks, categorical target label encoders, structural feature engine operations, and algorithmic training metrics computations.
+                    </p>
+                    <div class="project-metadata">
+                        <div class="meta-block">
+                            <strong>Dataset Context:</strong>
+                            <span>Kaggle Car Details Set (Akshay Dattatray)</span>
+                        </div>
+                        <div class="meta-block">
+                            <strong>Performance Validated:</strong>
+                            <span>R² Optimization Score & Mean Absolute Error (MAE)</span>
+                        </div>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Random Forest</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Seaborn</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/SaadDScientist/car_price_prediction_project" target="_blank"><i class="ri-github-line"></i> Repository Pipeline</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-socials">
+                <a href="https://github.com/SaadDScientist" target="_blank" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+                <a href="mailto:example@email.com" aria-label="Email"><i class="ri-mail-fill"></i></a>
+            </div>
+            <p class="footer-text">&copy; 2026 Saad Jalal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to Top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Direct inject of customized localized metadata filtering module
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Toggle Active state metrics
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const targetedFilter = btn.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        if (targetedFilter === 'all') {
+                            card.classList.remove('hidden');
+                        } else {
+                            if (card.getAttribute('data-category') === targetedFilter) {
+                                card.classList.remove('hidden');
+                            } else {
+                                card.classList.add('hidden');
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
